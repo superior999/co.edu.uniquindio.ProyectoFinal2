@@ -1,6 +1,9 @@
 package co.edu.uniquindio.proyecto.viewController;
 
+import co.edu.uniquindio.proyecto.Controller.UsuarioController;
 import co.edu.uniquindio.proyecto.mapping.dto.UsuarioDto;
+import co.edu.uniquindio.proyecto.model.GestionBilletera;
+import co.edu.uniquindio.proyecto.model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +20,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginViewController {
+
+    UsuarioController usuarioController;
+
     @FXML
     private ResourceBundle resources;
 
@@ -55,6 +61,19 @@ public class LoginViewController {
 
     @FXML
     void IngresarLogin(ActionEvent event) {
+
+        ingresarLogin();
+    }
+
+    private void ingresarLogin() {
+        String idUsuario = txtIdentificacionLogin.getText();
+        String contrasenia = txtContraseniaLogin.getText();
+//        GestionBilletera gestion = usuarioController.getGestionBilletera();
+        if(usuarioController.existeUsuario(idUsuario)) {
+            System.out.println("existe");
+        }else{
+            System.out.println("no existe");
+        }
 
 
     }
@@ -104,7 +123,9 @@ public class LoginViewController {
 
 
     @FXML
-    void initialize() {}
+    void initialize() {
+        usuarioController = new UsuarioController();
+    }
 
 }
 

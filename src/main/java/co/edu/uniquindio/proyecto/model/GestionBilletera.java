@@ -66,4 +66,13 @@ public class GestionBilletera  {
         }
         return null;
     }
+
+    public  boolean existeUsuario(String id) {
+        for (Usuario usuario : getListaUsuarios()) {
+            if (usuario.getIdUsuario().equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

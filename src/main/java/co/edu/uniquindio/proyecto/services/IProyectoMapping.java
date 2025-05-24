@@ -9,7 +9,6 @@ import java.util.List;
 public interface IProyectoMapping {
     List<UsuarioDto> getUsuarioDtos(List<Usuario> usuarios);
     UsuarioDto usuarioToUsuarioDto(Usuario usuario);
-    Usuario usuarioDtoToUsuario(UsuarioDto usuario);
+    Usuario usuarioDtoToUsuario(UsuarioDto usuarioDto);
 
-    Usuario usuariodtoToUsuario(UsuarioDto usuario);
 }

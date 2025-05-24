@@ -10,9 +10,16 @@ public class UsuarioController {
     ModelFactory modelFactory;
     public UsuarioController() {modelFactory=ModelFactory.getInstance();}
     public List<UsuarioDto>obtenerUsuarios(){
-        return modelFactory.obtenerUsuario();}
+        return modelFactory.obtenerUsuarios();}
 
     public GestionBilletera getGestionBilletera(){
         return modelFactory.getGestionBilletera();
+    }
+    public UsuarioDto obtenerUsuario(String id){
+        return modelFactory.obtenerUsuario(id);
+    }
+
+    public boolean existeUsuario(String id){
+        return modelFactory.existeUsuario(id);
     }
 }
