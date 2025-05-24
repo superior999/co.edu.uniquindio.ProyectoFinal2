@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyecto.viewController;
 
+import co.edu.uniquindio.proyecto.mapping.dto.UsuarioDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,6 +56,7 @@ public class LoginViewController {
     @FXML
     void IngresarLogin(ActionEvent event) {
 
+
     }
 
     @FXML
@@ -98,6 +100,8 @@ public class LoginViewController {
             e.printStackTrace();
         }
     }
+
+
 
     @FXML
     void initialize() {}

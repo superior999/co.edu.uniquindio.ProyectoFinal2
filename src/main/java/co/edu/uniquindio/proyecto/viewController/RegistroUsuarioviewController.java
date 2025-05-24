@@ -112,15 +112,15 @@ public class RegistroUsuarioviewController {
         }
 
         // Crear el builder y construir el usuario
-        UsuarioBuilder builder = new UsuarioBuilder()
+        UsuarioBuilder usuario = new UsuarioBuilder()
                 .setNombreUsuario(nombreUsuario)
                 .setIdUsuario(idUsuario)
                 .setEmailUsuario(emailUsuario)
                 .setTelefonoUsuario(telefonoUsuario)
                 .setContraseniaUsuario(contraseniaUsuario);
 
-        GestionBilletera gestion = ModelFactory.getInstance().getGestionBilletera();
-        boolean creado = gestion.crearUsuario(builder);
+        GestionBilletera gestion = usuarioController.getGestionBilletera();
+        boolean creado = gestion.crearUsuario(usuario);
 
         if (creado) {
             mostrarAlerta("Éxito", null, "Usuario registrado exitosamente.");
