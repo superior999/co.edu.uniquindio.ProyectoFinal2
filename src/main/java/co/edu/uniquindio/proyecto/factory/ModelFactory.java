@@ -24,8 +24,11 @@ public class ModelFactory implements IModelFactoryServices {
     public GestionBilletera getGestionBilletera() {
         return gestionBilletera;
     }
+
     private ModelFactory() {
+
        mapper=new ProyectoMappingImpl();
+
         gestionBilletera = new GestionBilletera();
     }
 
@@ -55,7 +58,7 @@ public class ModelFactory implements IModelFactoryServices {
     }
 
     @Override
-    public List<UsuarioDto> obtenerUsuario() {
+    public List<UsuarioDto> obtenerUsuarios() {
         return mapper.getUsuarioDtos(gestionBilletera.getListaUsuarios());
     }
 
@@ -64,10 +67,16 @@ public class ModelFactory implements IModelFactoryServices {
 
     }
 
-    @Override
-    public List<UsuarioDto> obtenerUsuarios() {
-        return List.of();
-    }
+   public UsuarioDto obtenerUsuario(String idUsuario) {
+        Usuario usuario = gestionBilletera.obtenerUsuario(idUsuario);
+
+        return mapper.usuarioToUsuarioDto(usuario);
+   }
+
+   public boolean existeUsuario(String id){
+        return gestionBilletera.existeUsuario(id);
+   }
+
 
     @Override
     public boolean mostrarListaUsuarios() {
