@@ -68,13 +68,12 @@ public class LoginViewController {
     private void ingresarLogin() {
         String idUsuario = txtIdentificacionLogin.getText();
         String contrasenia = txtContraseniaLogin.getText();
-//        GestionBilletera gestion = usuarioController.getGestionBilletera();
+
         if(usuarioController.existeUsuario(idUsuario)) {
             System.out.println("existe");
         }else{
             System.out.println("no existe");
         }
-
 
     }
 
